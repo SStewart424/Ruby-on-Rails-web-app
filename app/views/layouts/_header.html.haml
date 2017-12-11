@@ -1,0 +1,16 @@
+%nav.topnav
+    %ul
+        %li
+            = link_to t('nav1'), tables_url
+        %li
+            = link_to t('nav2')
+        %li
+            = link_to t('nav3')
+        %li
+            = link_to t('nav4'), contact_url
+            
+            
+            
+- flash.each do |key,value|
+    = content_tag :div, content_tag(:p, value), id: "#{key}" unless value.blank?
+    
