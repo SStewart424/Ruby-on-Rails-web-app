@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+prem = League.where(title: 'Premier League').first
+prem.delete if prem
+
+prem = League.create([title: 'Premier League'])
