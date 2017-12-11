@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171211032408) do
+ActiveRecord::Schema.define(version: 20171211033956) do
 
   create_table "leagues", force: :cascade do |t|
     t.string   "title",      null: false
@@ -20,5 +20,15 @@ ActiveRecord::Schema.define(version: 20171211032408) do
   end
 
   add_index "leagues", ["title"], name: "index_leagues_on_title", unique: true
+
+  create_table "teams", force: :cascade do |t|
+    t.integer  "league_id"
+    t.string   "name",       null: false
+    t.string   "points",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "teams", ["league_id"], name: "index_teams_on_league_id"
 
 end
