@@ -1,21 +1,21 @@
 %h1 Listing fixtures
-
-%table
-  %thead
-    %tr
-      %th Team
-      %th Score
-      %th Opponent
-  %tbody
-    - @fixtures.each do |fixture|
+.container
+  %table
+    %thead
       %tr
-        %td= fixture.team.name
-        %td= fixture.score
-        %td= fixture.opponent
-        %td= link_to 'Show', fixture
-        %td= link_to 'Edit', edit_fixture_path(fixture)
-        %td= link_to 'Destroy', fixture, method: :delete, data: { confirm: 'Are you sure?' }
+        %th Team
+        %th Score
+        %th Opponent
+    %tbody
+      - @fixtures.each do |fixture|
+        %tr
+          %td= fixture.team.name
+          %td= fixture.score
+          %td= fixture.opponent
+          %td= link_to 'Show', fixture
+          %td= link_to 'Edit', edit_fixture_path(fixture)
+          %td= link_to 'Destroy', fixture, method: :delete, data: { confirm: 'Are you sure?' }
 
-%br
+  %br
 
-= link_to 'New Fixture', new_fixture_path
+  = link_to 'New Fixture', new_fixture_path

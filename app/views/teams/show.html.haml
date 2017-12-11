@@ -1,15 +1,15 @@
 %p#notice= notice
-
-%p
-  %b League:
-  = @team.league.title
-%p
-  %b Name:
-  = @team.name
-%p
-  %b Points:
-  = @team.points
-%p= link_to 'Add fixture', new_fixture_path(team_id: @team)
-= link_to 'Edit', edit_team_path(@team)
-\|
-= link_to 'Back', teams_path
+.container
+  %p
+    %b League:
+    = @team.league.title
+  %p
+    %b Name:
+    = @team.name
+  %p
+    %b Points:
+    = @team.points
+  %p= link_to 'Add fixture', new_fixture_path(team_id: @team)
+  = link_to 'Edit', edit_team_path(@team)
+  \|
+  = link_to 'Back', teams_path

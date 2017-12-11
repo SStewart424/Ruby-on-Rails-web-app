@@ -15,3 +15,99 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+* {
+    box-sizing: border-box;
+}
+
+body{
+    background-image: image-url("home_background.jpg");
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+    
+    ul{
+        width: 100%;
+        li{
+            width: 25%;
+            float: left;
+            border-right: 2px solid #2c3e50;
+            color: white;
+            &:last-child {
+                border-right: none;
+            }
+            a{
+                width: 100%;
+                color: white;
+                display: block;
+                padding: 1.875em 0;
+                font-weight: bold;
+                text-decoration: none;
+                text-align: center;   
+            }
+        }
+    }
+    
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+.footer{
+    position: fixed;
+    bottom: 0px;
+    background-color: #f2f2f2;
+    right: 0px;
+}
+#alert {
+   font-weight: bold;
+   border-radius: 4px 4px 4px 4px;
+   margin-bottom: 18px;
+   padding: 12px 25px 12px 24px;
+   box-shadow: 3px 3px 1px 1px #CCCCCC;
+}
+#notice {
+   background-color: #66E167;
+   border-color: #D6E9C6;
+   width: 280px;
+   color: black;
+   padding-top: 20px;
+}
+.container{
+        margin-top: 50px;
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+        tr{
+          padding-right: 15px;
+        }
+        th, td{
+          padding-right: 15px;
+          border: 1px solid #ddd;
+          padding: 8px;
+        }
+        th{
+          padding-top: 12px;
+          padding-bottom: 12px;
+          text-align: left;
+          background-color: #4CAF50;
+          color: white;
+        }
+        tr:nth-child(even){background-color: #f2f2f2;}
+        tr:hover {background-color: #ddd;}
+}
+h1{
+    font-size: 80px;
+    margin-top: 50px;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}

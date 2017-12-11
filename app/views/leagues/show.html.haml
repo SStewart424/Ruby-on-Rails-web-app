@@ -1,18 +1,18 @@
 %p#notice= notice
-
-%p
-  %b= @league.title
-%p Teams:
-%table
-  %tbody
-    - @league.teams.each do |team|
-      %tr{id: "team_#{team.id}"}
-        %td= team.name
-        %td= team.points
-        %td= link_to'Show', team
-        %td= link_to'Edit', edit_team_path(team)
-        %td= link_to'Destroy', team, :method => :delete, :data => { :confirm => 'Are you sure?'}, :remote => true
-%p= link_to t('.add_team'), new_team_path(league_id: @league)
-= link_to 'Edit', edit_league_path(@league)
-\|
-= link_to 'Back', leagues_path
+.container
+  %p
+    %b= @league.title
+  %p Teams:
+  %table
+    %tbody
+      - @league.teams.each do |team|
+        %tr{id: "team_#{team.id}"}
+          %td= team.name
+          %td= team.points
+          %td= link_to'Show', team
+          %td= link_to'Edit', edit_team_path(team)
+          %td= link_to'Destroy', team, :method => :delete, :data => { :confirm => 'Are you sure?'}, :remote => true
+  %p= link_to t('.add_team'), new_team_path(league_id: @league)
+  = link_to 'Edit', edit_league_path(@league)
+  \|  
+  = link_to 'Back', leagues_path

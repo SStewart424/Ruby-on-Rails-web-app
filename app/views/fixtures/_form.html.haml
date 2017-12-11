@@ -1,20 +1,21 @@
-= form_for @fixture do |f|
-  - if @fixture.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@fixture.errors.count, "error")} prohibited this fixture from being saved:"
-      %ul
-        - @fixture.errors.full_messages.each do |message|
-          %li= message
+.container
+  = form_for @fixture do |f|
+    - if @fixture.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@fixture.errors.count, "error")} prohibited this fixture from being saved:"
+        %ul
+          - @fixture.errors.full_messages.each do |message|
+            %li= message  
 
-  .field
-    = f.label :team
-    %p= @fixture.team.name
-    = f.hidden_field :team_id, value: @fixture.team.id
-  .field
-    = f.label :score
-    = f.text_field :score
-  .field
-    = f.label :opponent
-    = f.text_field :opponent
-  .actions
-    = f.submit 'Save'
+    .field
+      = f.label :team
+      %p= @fixture.team.name
+      = f.hidden_field :team_id, value: @fixture.team.id
+    .field
+      = f.label :score
+      = f.text_field :score
+    .field
+      = f.label :opponent
+      = f.text_field :opponent
+    .actions
+      = f.submit 'Save'

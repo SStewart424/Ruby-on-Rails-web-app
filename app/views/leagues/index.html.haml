@@ -1,21 +1,21 @@
 %h1 Listing leagues
-
-%table
-  %thead
-    %tr
-      %th Title
-      %th
-      %th
-      %th
-
-  %tbody
-    - @leagues.each do |league|
+.container
+  %table
+    %thead
       %tr
-        %td= league.title
-        %td= link_to 'Show', league
-        %td= link_to 'Edit', edit_league_path(league)
-        %td= link_to 'Destroy', league, method: :delete, data: { confirm: 'Are you sure?' }
+        %th Title
+        %th
+        %th
+        %th
 
-%br
+    %tbody
+      - @leagues.each do |league|
+        %tr
+          %td= league.title
+          %td= link_to 'Show', league
+          %td= link_to 'Edit', edit_league_path(league)
+          %td= link_to 'Destroy', league, method: :delete, data: { confirm: 'Are you sure?' }
+  
+  %br
 
-= link_to 'New League', new_league_path
+  = link_to 'New League', new_league_path

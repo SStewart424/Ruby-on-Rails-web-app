@@ -1,15 +1,15 @@
 %p#notice= notice
+.container
+  %p
+    %b Team:
+    = @fixture.team.name
+  %p
+    %b Score:
+    = @fixture.score
+  %p
+    %b Opponent:
+    = @fixture.opponent
 
-%p
-  %b Team:
-  = @fixture.team.name
-%p
-  %b Score:
-  = @fixture.score
-%p
-  %b Opponent:
-  = @fixture.opponent
-
-= link_to 'Edit', edit_fixture_path(@fixture)
-\|
-= link_to 'Back', fixtures_path
+  = link_to 'Edit', edit_fixture_path(@fixture)
+  \|
+  = link_to 'Back', fixtures_path
