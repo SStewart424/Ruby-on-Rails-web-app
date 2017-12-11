@@ -1,4 +1,5 @@
 class TeamsController < ApplicationController
+  before_action :set_league, only: [:new, :create]
   before_action :set_team, only: [:show, :edit, :update, :destroy]
 
   # GET /teams
@@ -14,7 +15,7 @@ class TeamsController < ApplicationController
 
   # GET /teams/new
   def new
-    @team = Team.new
+    @team = @league.teams.new
   end
 
   # GET /teams/1/edit
@@ -24,7 +25,7 @@ class TeamsController < ApplicationController
   # POST /teams
   # POST /teams.json
   def create
-    @team = Team.new(team_params)
+    @team = @league.teams.new(team_params)
 
     respond_to do |format|
       if @team.save
@@ -58,6 +59,7 @@ class TeamsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to teams_url, notice: 'Team was successfully destroyed.' }
       format.json { head :no_content }
+      format.js {flash[:notice] = 'Team was successfully destroyed.'}
     end
   end
 
@@ -66,7 +68,9 @@ class TeamsController < ApplicationController
     def set_team
       @team = Team.find(params[:id])
     end
-
+    def set_league
+      @league = League.find_by(id: params[:league_id]) || League.find(team_params[:league_id])
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def team_params
       params.require(:team).permit(:league_id, :name, :points)

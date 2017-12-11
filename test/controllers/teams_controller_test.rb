@@ -13,7 +13,7 @@ class TeamsControllerTest < ActionController::TestCase
   end
 
   test "should get new" do
-    get :new
+    get :new, league_id: @league
     assert_response :success
   end
 
