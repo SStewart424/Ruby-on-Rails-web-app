@@ -4,6 +4,7 @@
   %b Title:
   = @league.title
 
+%p= link_to t('.add_team'), new_team_path(league_id: @league)
 = link_to 'Edit', edit_league_path(@league)
 \|
 = link_to 'Back', leagues_path

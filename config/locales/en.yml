@@ -45,3 +45,5 @@ en:
       no_name: You must supply a name
       no_message: You must supply a message
       email_sent: Thank you, we will be in touch shortly.
+    leagues:
+      add_team: Add Team

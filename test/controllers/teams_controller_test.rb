@@ -3,6 +3,7 @@ require 'test_helper'
 class TeamsControllerTest < ActionController::TestCase
   setup do
     @team = teams(:one)
+    @league = league(:one)
   end
 
   test "should get index" do
@@ -18,7 +19,7 @@ class TeamsControllerTest < ActionController::TestCase
 
   test "should create team" do
     assert_difference('Team.count') do
-      post :create, team: { league_id: @team.league_id, name: @team.name, points: @team.points }
+      post :create, team: { league_id: @league, name: @team.name, points: @team.points }
     end
 
     assert_redirected_to team_path(assigns(:team))
@@ -35,7 +36,7 @@ class TeamsControllerTest < ActionController::TestCase
   end
 
   test "should update team" do
-    patch :update, id: @team, team: { league_id: @team.league_id, name: @team.name, points: @team.points }
+    patch :update, id: @team, team: { league_id: @league, name: @team.name, points: @team.points }
     assert_redirected_to team_path(assigns(:team))
   end
 
