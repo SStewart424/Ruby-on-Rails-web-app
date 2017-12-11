@@ -6,14 +6,10 @@
       %th Team
       %th Score
       %th Opponent
-      %th
-      %th
-      %th
-
   %tbody
     - @fixtures.each do |fixture|
       %tr
-        %td= fixture.team
+        %td= fixture.team.name
         %td= fixture.score
         %td= fixture.opponent
         %td= link_to 'Show', fixture

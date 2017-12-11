@@ -8,7 +8,8 @@
 
   .field
     = f.label :team
-    = f.text_field :team
+    %p= @fixture.team.name
+    = f.hidden_field :team_id, value: @fixture.team.id
   .field
     = f.label :score
     = f.text_field :score

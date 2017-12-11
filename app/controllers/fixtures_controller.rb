@@ -1,4 +1,5 @@
 class FixturesController < ApplicationController
+  before_action :set_team, only: [:new, :create]
   before_action :set_fixture, only: [:show, :edit, :update, :destroy]
 
   # GET /fixtures
@@ -14,7 +15,7 @@ class FixturesController < ApplicationController
 
   # GET /fixtures/new
   def new
-    @fixture = Fixture.new
+    @fixture = @team.fixtures.new
   end
 
   # GET /fixtures/1/edit
@@ -24,7 +25,7 @@ class FixturesController < ApplicationController
   # POST /fixtures
   # POST /fixtures.json
   def create
-    @fixture = Fixture.new(fixture_params)
+    @fixture = @team.fixtures.new(fixture_params)
 
     respond_to do |format|
       if @fixture.save
@@ -66,7 +67,10 @@ class FixturesController < ApplicationController
     def set_fixture
       @fixture = Fixture.find(params[:id])
     end
-
+    
+    def set_team
+      @team = Team.fin_by(id: params[:note_id]) || Note.find(task_params[:note_id])
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def fixture_params
       params.require(:fixture).permit(:team_id, :score, :opponent)
