@@ -69,7 +69,7 @@ class FixturesController < ApplicationController
     end
     
     def set_team
-      @team = Team.fin_by(id: params[:note_id]) || Note.find(task_params[:note_id])
+      @team = Team.find_by(id: params[:team_id]) || Team.find(fixture_params[:team_id])
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def fixture_params
