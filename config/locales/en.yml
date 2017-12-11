@@ -22,3 +22,26 @@
 en:
   app_title: Football League Viewer
   app_description: Here you can view league tables for the Premier League
+  nav1: League Tables
+  nav2: Teams
+  nav3: Fixtures
+  nav4: Contact Us
+   
+  home:
+    home:
+      title: Football League Viewer
+    contact:
+      name: "Name:"
+      enter_name: Enter your name
+      email: "Email:"
+      enter_email: Enter your email address
+      telephone: "Telephone:"
+      enter_telephone: Enter your telephone number
+      message: "Message:"
+      enter_message: What do you want to say?
+      submit: Contact Us
+    request_contact:
+      no_email: You must supply an email address
+      no_name: You must supply a name
+      no_message: You must supply a message
+      email_sent: Thank you, we will be in touch shortly.
