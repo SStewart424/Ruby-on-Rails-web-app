@@ -1,0 +1,25 @@
+%h1 Listing fixtures
+
+%table
+  %thead
+    %tr
+      %th Team
+      %th Score
+      %th Opponent
+      %th
+      %th
+      %th
+
+  %tbody
+    - @fixtures.each do |fixture|
+      %tr
+        %td= fixture.team
+        %td= fixture.score
+        %td= fixture.opponent
+        %td= link_to 'Show', fixture
+        %td= link_to 'Edit', edit_fixture_path(fixture)
+        %td= link_to 'Destroy', fixture, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Fixture', new_fixture_path

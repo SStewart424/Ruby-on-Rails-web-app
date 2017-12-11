@@ -1,9 +1,8 @@
 %p#notice= notice
 
 %p
-  %b Title:
-  = @league.title
-%p Tasls:
+  %b= @league.title
+%p Teams:
 %table
   %tbody
     - @league.teams.each do |team|
