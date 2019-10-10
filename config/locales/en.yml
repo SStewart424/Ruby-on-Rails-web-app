@@ -26,7 +26,13 @@ en:
   nav2: Teams
   nav3: Fixtures
   nav4: Contact Us
-   
+  email_p: Could you get in touch with me please?
+  show: Show
+  back: Back
+  edit: Edit
+  destroy: Destroy
+  confirm: Are you sure?
+  save: Save
   home:
     home:
       title: Football League Viewer
@@ -45,5 +51,18 @@ en:
       no_name: You must supply a name
       no_message: You must supply a message
       email_sent: Thank you, we will be in touch shortly.
+    fixtures:
+      edit_f: Editing Fixtures
+      list_f: List of Fixtures
+      new_f: New Fixture
     leagues:
-      add_team: Add Team
+      add_team: Add a Team
+      team_title: "Teams:"
+      add_league: Add a League
+      new_l: New Fixture
+      edit_l: Editing League
+    teams:
+      new_f: New Fixture
+      new_t: New Team
+      list_t: List of Teams
+      edit_t: Editing Team

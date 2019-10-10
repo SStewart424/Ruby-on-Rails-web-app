@@ -1,5 +1,6 @@
 class TeamsController < ApplicationController
-  before_action :set_league, only: [:new, :create]
+  before_action :set_league_new, only: [:new]
+  before_action :set_league_create, only: [:create]
   before_action :set_team, only: [:show, :edit, :update, :destroy]
 
   # GET /teams
@@ -68,7 +69,10 @@ class TeamsController < ApplicationController
     def set_team
       @team = Team.find(params[:id])
     end
-    def set_league
+    def set_league_new
+      @league = League.find_by(id: params[:league_id]) || League.find(team_params[:league_id])
+    end
+    def set_league_create
       @league = League.find_by(id: params[:league_id]) || League.find(team_params[:league_id])
     end
     # Never trust parameters from the scary internet, only allow the white list through.

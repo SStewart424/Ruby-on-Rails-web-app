@@ -9,7 +9,7 @@
   %p
     %b Points:
     = @team.points
-  %p= link_to 'Add fixture', new_fixture_path(team_id: @team)
-  = link_to 'Edit', edit_team_path(@team)
+  %p= link_to t('.new_f'), new_fixture_path(team_id: @team)
+  = link_to t('edit'), edit_team_path(@team)
   \|
-  = link_to 'Back', teams_path
+  = link_to t('back'), teams_path

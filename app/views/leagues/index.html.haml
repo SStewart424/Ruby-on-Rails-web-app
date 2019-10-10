@@ -12,10 +12,10 @@
       - @leagues.each do |league|
         %tr
           %td= league.title
-          %td= link_to 'Show', league
-          %td= link_to 'Edit', edit_league_path(league)
-          %td= link_to 'Destroy', league, method: :delete, data: { confirm: 'Are you sure?' }
+          %td= link_to t('show'), league
+          %td= link_to t('edit'), edit_league_path(league)
+          %td= link_to t('destroy'), league, method: :delete, data: { confirm: t('confirm') }
   
   %br
 
-  = link_to 'New League', new_league_path
+  = link_to t(.add_league), new_league_path

@@ -1,5 +1,6 @@
 class FixturesController < ApplicationController
-  before_action :set_team, only: [:new, :create]
+  before_action :set_team_new, only: [:new]
+  before_action :set_team_create, only: [:create]
   before_action :set_fixture, only: [:show, :edit, :update, :destroy]
 
   # GET /fixtures
@@ -68,7 +69,10 @@ class FixturesController < ApplicationController
       @fixture = Fixture.find(params[:id])
     end
     
-    def set_team
+    def set_team_new
+      @team = Team.find_by(id: params[:team_id]) || Team.find(fixture_params[:team_id])
+    end
+    def set_team_create
       @team = Team.find_by(id: params[:team_id]) || Team.find(fixture_params[:team_id])
     end
     # Never trust parameters from the scary internet, only allow the white list through.

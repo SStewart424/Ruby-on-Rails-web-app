@@ -1,4 +1,4 @@
-%h1 Listing fixtures
+%h1 t('list_f')
 .container
   %table
     %thead
@@ -12,10 +12,10 @@
           %td= fixture.team.name
           %td= fixture.score
           %td= fixture.opponent
-          %td= link_to 'Show', fixture
-          %td= link_to 'Edit', edit_fixture_path(fixture)
-          %td= link_to 'Destroy', fixture, method: :delete, data: { confirm: 'Are you sure?' }
+          %td= link_to t('show'), fixture
+          %td= link_to t('edit'), edit_fixture_path(fixture)
+          %td= link_to t('destroy'), fixture, method: :delete, data: { confirm: t('confirm') }
 
   %br
 
-  = link_to 'New Fixture', new_fixture_path
+  = link_to t('.new_f'), new_fixture_path
